@@ -21,7 +21,7 @@ def main():
     #pass currentWeather and forecastWeather data to adafruit_data.py to be sent to our dashboard
     adafruit_data.postData(weatherData)
     
-    time.sleep(20)
+    time.sleep(15)
 #end main 
 
 main()
