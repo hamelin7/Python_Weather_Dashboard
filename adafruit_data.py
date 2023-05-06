@@ -12,12 +12,16 @@ aioAPIkey = os.environ['adafruitAPIkey']
 aio = Client(aioUsername, aioAPIkey)
 
 #function to get zip code feed value from adafruit.io. The user can specify the zip code by typing it in on the dashboard.
+#big O(1)
 def getZipCode():
   zipCode = aio.receive('zip-code-feed')
   zipCode = zipCode.value
   return zipCode
 
 #function for posting weather data to adafruit.io 
+#big O(n) - sacrificing some efficiency but it's so much easier 
+#to write a loop to iterate through all the itmes in the weatherData dictionary 
+#than to write out individual statements to send data to adafruit.io. 
 def postData(weatherData):
   #send each of the feed values to the corresponding feed using a for loop to iterate through all the items in weatherData dictionary
   for key, value in weatherData.items():

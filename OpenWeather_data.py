@@ -9,6 +9,7 @@ import requests
 #put OpenWeatherMap API key into variable called weatherAPIkey 
 weatherAPIkey = os.environ['weatherAPIkey']
 
+#big O(1)
 def getOpenWeatherURL(zipCode, weatherAPIkey):
   
   #keeping country code as a variable in case I want it to be controlled via user input.
@@ -26,6 +27,7 @@ def getOpenWeatherURL(zipCode, weatherAPIkey):
   forecastURL = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&units=imperial&cnt=1&appid={weatherAPIkey}"
   return currentURL, forecastURL
 
+#big O(1)
 def getWeatherData(zipCode):
   #call the getOpenWeatherURL function to get the URLs we will use to get our current and forecast weather data from OpenWeatherMap
   currentWeatherURL, forecastWeatherURL = getOpenWeatherURL(zipCode, weatherAPIkey)
