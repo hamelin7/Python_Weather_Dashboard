@@ -7,7 +7,7 @@ import adafruit_data
 import OpenWeather_data
 
 #use while loop to continuously check the 'zip-code-feed'
-#set time.sleep to 15 seconds to not exceed the 30 data points per minute rate limit set by adafruit.io free API.
+#set time.sleep to 20 seconds to not exceed the 30 data points per minute rate limit set by adafruit.io free API.
 #we are sending 7 data points of weather data to our adafruit.io dashboard so we can send those 7 data points every 20 seconds without risking exceeding the rate limit
 
 def main():
