@@ -1,6 +1,6 @@
 #Greg Hamelin
 #Elms - Data Structures - CIT3302
-#Final Project
+#Final Project - WeatherDash
 
 import time
 import adafruit_data
