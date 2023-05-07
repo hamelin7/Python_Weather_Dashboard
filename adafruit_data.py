@@ -23,7 +23,7 @@ def getFeeds():
     adafruitFeedDict = {}
     #get list of adafruitFeeds
     adafruitFeeds = aio.feeds()
-    #get each feed name and add to the dictionary as a new key with the value set to None. 
+    #get each feed name and add to the dictionary as a new key with the value set to "". 
     #had to exclude the zip-code-feed key because it's not updated here and throwing an error
     #big-O: O(n)
     for f in adafruitFeeds:
