@@ -60,21 +60,11 @@ def getWeatherData(zipCode, weatherDataDict):
   barometer = currentWeatherData['main']['pressure']
 
   #make a dictionary of all the data points we want to send back to adafruit with the key matching the feed key for each feed in Adafruit.io
-  #this has a big O of O(n^2)
+  #big-O: O(N^2)
   for key in weatherDataDict.keys():
-      if key.startswith('temp'):
-          weatherDataDict[key] = temp
-      elif key.startswith('humidity'):
-          weatherDataDict[key] = humidity
-      elif key.startswith('precip'):
-          weatherDataDict[key] = precipitation
-      elif key.startswith('description'):
-          weatherDataDict[key] = description
-      elif key.startswith('barometer'):
-          weatherDataDict[key] = barometer
-      elif key.startswith('sunrise'):
-          weatherDataDict[key] = sunrise
-      elif key.startswith('sunset'):
-          weatherDataDict[key] = sunset
-
+    for variableName, variableValue in vars().items():
+        if key.startswith(variableName) and variableName != 'key':
+            weatherDataDict[key] = variableValue
+            break
+          
   return weatherDataDict

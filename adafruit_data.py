@@ -19,13 +19,13 @@ def getZipCode():
   return zipCode
 
 #getFeeds gets a list of the feed names which also match the 'feed-key' we need to send data to the corresponding feeds. 
-#this function has a big O of O(n)
 def getFeeds():
     adafruitFeedDict = {}
     #get list of adafruitFeeds
     adafruitFeeds = aio.feeds()
     #get each feed name and add to the dictionary as a new key with the value set to None. 
     #had to exclude the zip-code-feed key because it's not updated here and throwing an error
+    #big-O: O(n)
     for f in adafruitFeeds:
       if f.name != "zip-code-feed":
         adafruitFeedDict[f.name] = ""
